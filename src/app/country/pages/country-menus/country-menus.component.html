@@ -24,11 +24,11 @@
       <label class="form-label">País:</label>
       <select formControlName="country" class="form-control">
         <option value="">-- Seleccione País --</option>
-        <!-- @for(country of countriesByRegion(); track country){
+        @for(country of countriesByRegion(); track country.cca3){
           <option [value]="country.cca3">
-            {{ country.name }}
+            {{ country.name.common }}
           </option>
-        } -->
+        }
 
 
       </select>
@@ -44,10 +44,13 @@
       <select formControlName="border" class="form-control">
         <option value="">-- Seleccione la frontera --</option>
 
+        @for(country of bordersByCountry(); track country.cca3){
 
-        <!-- <option [value]="country.cca3">
-          {{ country.name }}
-        </option> -->
+          <option [value]="country.cca3">
+            {{ country.name.common}}
+          </option>
+        }
+
       </select>
     </div>
   </div>
